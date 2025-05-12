@@ -29,12 +29,12 @@ def distanceCalculator(graph, startNode, endNode):
                 if graph[currentNode][neighbor] < unvisited[neighbor][0]:
                     newDistance = graph[currentNode][neighbor]
                     unvisited.update({neighbor: (newDistance, currentNode)})
-                print(unvisited)
+                # print(unvisited)
             # Everything else
             if graph[currentNode][neighbor] + unvisited[currentNode][0] < unvisited[neighbor][0]:
                 newDistance = graph[currentNode][neighbor] + unvisited[currentNode][0]
                 unvisited.update({neighbor: (newDistance, currentNode)})
-                print(unvisited)
+                # print(unvisited)
 
     finalDistance = unvisited[list(unvisited)[-1]][0]
     print(f'Shortest Distance from {startNode} to {endNode} is {finalDistance}')
