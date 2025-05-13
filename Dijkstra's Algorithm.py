@@ -1,9 +1,8 @@
 graph = {
-    'A': {'B': 8, 'C': 5},
-    'B': {'A': 8, 'C': 3, 'D': 1},
-    'C': {'A': 5, 'B': 3, 'D': 6, 'E': 9},
-    'D': {'B': 1, 'C': 6, 'E': 2},
-    'E': {'C': 9, 'D': 2}
+    'A': {'B': 4, 'C': 2},
+    'B': {'A': 4, 'C': 5, 'D': 10},
+    'C': {'A': 2, 'B': 5, 'D': 3},
+    'D': {'B': 10, 'C': 3}
 }
 
 
@@ -18,7 +17,7 @@ def distanceCalculator(graph, startNode, endNode):
     # print(unvisited)
 
     # To avoid confusion and readability seperated it from the above one
-    for currentNode in Nodes:
+    for currentNode in sorted(unvisited, key=lambda node: unvisited[node][0]):
         nodeKeys = list(graph[currentNode].keys())  # If in A -> [B, C]
         # print(nodeKeys)
         for neighbor in nodeKeys:  # gives me B and c seperated
